@@ -88,7 +88,7 @@ def unet(pretrained_weights = None,input_size = (256,256,3),num_class=2):
     conv9 = Conv2D(64,3,activation=None,padding='same',kernel_initializer='he_normal')(conv9)
     conv9 = LeakyReLU(alpha=0.3)(conv9)
 
-    if num_class == 2:#判断是否多分类问题，二分类激活函数使用sigmoid，而多分割采用softmax。相应的损失函数的选择也各有不同。
+    if num_class == 2:
         conv10 = Conv2D(1,1,activation='sigmoid')(conv9)
         #loss_function = 'binary_crossentropy'
         loss_function = dice_coef_loss
