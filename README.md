@@ -1,6 +1,6 @@
 # model
 
-放一些用過的keras model
+放一些用過的model
 
 ## U-net
 
